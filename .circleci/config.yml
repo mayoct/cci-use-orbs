@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   docker_orb: circleci/docker@2.0.3
+  heroku_orb: circleci/heroku@1.2.6
 
 workflows:
   workflows:
@@ -12,3 +13,6 @@ workflows:
             dlc: true
           lint-dockerfile: true
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
+      - heroku_orb/push-docker-image:
+          executor: default
+          app-name: $CIRCLE_PROJECT_REPONAME
