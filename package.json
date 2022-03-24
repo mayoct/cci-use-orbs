@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mayoct/cci-use-orbs/issues"
   },
-  "homepage": "https://github.com/mayoct/cci-use-orbs#readme"
+  "homepage": "https://github.com/mayoct/cci-use-orbs#readme",
+  "dependencies": {
+    "express-generator": "^4.16.1"
+  }
 }
