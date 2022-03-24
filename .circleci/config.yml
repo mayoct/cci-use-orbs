@@ -11,4 +11,4 @@ workflows:
             name: docker_orb/machine
             dlc: true
           lint-dockerfile: true
-          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
