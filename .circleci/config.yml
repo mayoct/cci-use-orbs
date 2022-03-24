@@ -6,7 +6,7 @@ orbs:
 workflows:
   workflows:
     jobs:
-      - docker_orb/publish
+      - docker_orb/publish:
           executor:
             name: docker_orb/machine
             dlc: true
