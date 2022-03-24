@@ -14,6 +14,9 @@ workflows:
           lint-dockerfile: true
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
       - heroku_orb/push-docker-image:
+          executor:
+            name: docker_orb/machine
+            dlc: true
           app-name: $CIRCLE_PROJECT_REPONAME
           requires:
             - docker_orb/publish
