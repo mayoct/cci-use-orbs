@@ -14,7 +14,10 @@ jobs:
       - docker_orb/build:
           lint-dockerfile: true
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
-          tag: registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
+      - run:
+          command: |
+            docker tag $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME \
+              registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
       - docker_orb/push:
           image: registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
       - heroku_orb/release-docker-image:
