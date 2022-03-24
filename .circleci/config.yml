@@ -15,3 +15,5 @@ workflows:
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
       - heroku_orb/push-docker-image:
           app-name: $CIRCLE_PROJECT_REPONAME
+          requires:
+            - docker_orb/publish
