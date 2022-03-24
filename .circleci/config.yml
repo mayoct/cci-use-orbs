@@ -20,6 +20,8 @@ jobs:
             docker tag $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME \
               registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
       - docker_orb/push:
-          image: registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
+          registry: registry.heroku.com
+          image: $CIRCLE_PROJECT_REPONAME/web
+          tag: latest
       - heroku_orb/release-docker-image:
           app-name: $CIRCLE_PROJECT_REPONAME
