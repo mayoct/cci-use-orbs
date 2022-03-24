@@ -14,5 +14,4 @@ workflows:
           lint-dockerfile: true
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
       - heroku_orb/push-docker-image:
-          executor: heroku_orb/default
           app-name: $CIRCLE_PROJECT_REPONAME
