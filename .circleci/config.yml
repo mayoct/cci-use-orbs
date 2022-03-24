@@ -11,17 +11,9 @@ jobs:
       dlc: true
     steps:
       - checkout
-      - docker_orb/build:
-          lint-dockerfile: true
-          image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
-          tag: latest
-      - run:
-          command: |
-            docker tag $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME \
-              registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
-      - docker_orb/push:
-          registry: registry.heroku.com
-          image: $CIRCLE_PROJECT_REPONAME/web
-          tag: latest
+      - docker_orb/hadolint
+      - heroku_orb/push-docker-image:
+          app-name: $CIRCLE_PROJECT_REPONAME
+          process-types: web
       - heroku_orb/release-docker-image:
           app-name: $CIRCLE_PROJECT_REPONAME
