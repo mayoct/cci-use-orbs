@@ -1,5 +1,6 @@
 # CircleCI Orb を使ってみよう
-[![CircleCI](https://circleci.com/gh/mayoct/cci-use-orbs/tree/step03.svg?style=svg)](https://circleci.com/gh/mayoct/cci-use-orbs/tree/step03)## Step 01
+[![CircleCI](https://circleci.com/gh/mayoct/cci-use-orbs/tree/step03.svg?style=svg)](https://circleci.com/gh/mayoct/cci-use-orbs/tree/step03)
+## Step 01
 まずは Node.js + Express の組み合わせでサンプルアプリケーションを構築
 (https://github.com/mayoct/cci-use-orbs/tree/step01)
 ### 使用Orb
