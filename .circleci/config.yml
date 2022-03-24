@@ -21,4 +21,6 @@ workflows:
   workflow:
     jobs:
       - docker_orb/hadolint
-      - build-and-deploy
+      - build-and-deploy:
+          requires:
+            - docker_orb/hadolint
