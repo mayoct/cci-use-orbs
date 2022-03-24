@@ -1,0 +1,19 @@
+{
+  "name": "cci-use-orbs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayoct/cci-use-orbs.git"
+  },
+  "author": "Masahiko Funaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayoct/cci-use-orbs/issues"
+  },
+  "homepage": "https://github.com/mayoct/cci-use-orbs#readme"
+}
