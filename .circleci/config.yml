@@ -11,11 +11,11 @@ jobs:
       dlc: true
     steps:
       - checkout
-      - docker_orb/build
+      - docker_orb/build:
           lint-dockerfile: true
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
           tag: registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
-      - docker_orb/push
+      - docker_orb/push:
           image: registry.heroku.com/$CIRCLE_PROJECT_REPONAME/web
       - heroku_orb/release-docker-image:
           app-name: $CIRCLE_PROJECT_REPONAME
