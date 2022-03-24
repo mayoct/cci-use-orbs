@@ -4,6 +4,16 @@ orbs:
   docker_orb: circleci/docker@2.0.3
   heroku_orb: circleci/heroku@1.2.6
 
+jobs:
+  push-docker-image:
+    executor:
+      name: docker_orb/machine
+      dlc: true
+    steps:
+      - checkout
+      - heroku_orb/push-docker-image:
+          app-name: $CIRCLE_PROJECT_REPONAME
+
 workflows:
   workflows:
     jobs:
@@ -13,10 +23,6 @@ workflows:
             dlc: true
           lint-dockerfile: true
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
-      - heroku_orb/push-docker-image:
-          executor:
-            name: docker_orb/machine
-            dlc: true
-          app-name: $CIRCLE_PROJECT_REPONAME
+      - push-docker-image:
           requires:
             - docker_orb/publish
