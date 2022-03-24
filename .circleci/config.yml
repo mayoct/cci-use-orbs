@@ -11,6 +11,7 @@ jobs:
       dlc: true
     steps:
       - checkout
+      - docker_orb/install-docker
       - docker_orb/hadolint
       - heroku_orb/push-docker-image:
           app-name: $CIRCLE_PROJECT_REPONAME
